@@ -6,16 +6,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
-import joblib  # to load saved GPU model
+import joblib  
 
 # Paths
 results_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
 preprocessed_file = os.path.join(results_dir, "preprocessed_data.csv")
-gpu_model_file = os.path.join(results_dir, "gpu_model.pkl")  # make sure you saved your GPU model as .pkl
+gpu_model_file = os.path.join(results_dir, "gpu_model.pkl")  
 
-# ==============================
 # Load preprocessed test data
-# ==============================
 df = pd.read_csv(preprocessed_file)
 
 # Ensure stroke is numeric
@@ -28,7 +26,7 @@ test_df = df[df['split'] == 'test'].copy()
 test_df = test_df.dropna(subset=['stroke'])
 
 X_test = test_df.drop(['stroke','split'], axis=1)
-y_test = test_df['stroke'].astype(int)  # ensure integer labels
+y_test = test_df['stroke'].astype(int)  
 
 # Filter test set and remove NaNs
 test_df = df[df['split'] == 'test'].copy()

@@ -15,14 +15,9 @@ results_dir = os.path.join(base_dir, "results")
 
 cpu_model_file = os.path.join(results_dir, "cpu_model.pkl")
 gpu_model_file = os.path.join(results_dir, "gpu_model.pkl")
-preprocessed_file = os.path.join(results_dir, "preprocessed_data.csv")  # fixed path
+preprocessed_file = os.path.join(results_dir, "preprocessed_data.csv")  
 
-# ==============================
 # Load preprocessed test data
-# ==============================
-# ==============================
-# Load preprocessed test data
-# ==============================
 df = pd.read_csv(preprocessed_file)
 
 # Ensure stroke is numeric
@@ -35,17 +30,13 @@ test_df = df[df['split'] == 'test'].copy()
 test_df = test_df.dropna(subset=['stroke'])
 
 X_test = test_df.drop(['stroke','split'], axis=1)
-y_test = test_df['stroke'].astype(int)  # ensure integer labels
+y_test = test_df['stroke'].astype(int)  
 
 
-# ==============================
 # Load CPU model
-# ==============================
 cpu_model = joblib.load(cpu_model_file)
 
-# ==============================
 # Predict and create confusion matrix
-# ==============================
 y_pred = cpu_model.predict(X_test)
 cm = confusion_matrix(y_test, y_pred)
 

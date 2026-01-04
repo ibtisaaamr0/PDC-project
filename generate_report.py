@@ -1,4 +1,3 @@
-# generate_report.py
 import os
 import pandas as pd
 from fpdf import FPDF
@@ -9,11 +8,9 @@ results_dir = os.path.join(os.path.dirname(__file__), 'results')
 pdf_file = os.path.join(results_dir, "PDC_Project_Report.pdf")
 
 # Load results (CPU + GPU)
-# Load results (CPU + GPU)
 cpu_res = pd.read_json(os.path.join(results_dir, "cpu_results.json"))
 gpu_res = pd.read_json(os.path.join(results_dir, "gpu_results.json"))
 
-# Ensure numeric columns are correct type
 for col in ["Training Time (s)", "Accuracy (%)", "F1 Score"]:
     cpu_res[col] = pd.to_numeric(cpu_res[col], errors='coerce')
     gpu_res[col] = pd.to_numeric(gpu_res[col], errors='coerce')

@@ -17,7 +17,7 @@ def load_and_preprocess(csv_path):
     if "id" in df.columns:
         df.drop(columns=["id"], inplace=True)
     
-    # Fill missing BMI values with mean
+    # Fill missing  values 
     if "bmi" in df.columns:
         df["bmi"] = df["bmi"].fillna(df["bmi"].mean())
     
@@ -69,8 +69,3 @@ def load_and_preprocess(csv_path):
     print(f"\nPreprocessed data saved to: {preprocessed_file}")
     
     return X_train_scaled, X_test_scaled, y_train, y_test
-
-# Example usage if run directly
-if __name__ == "__main__":
-    csv_path = os.path.join(".", "data", "healthcare-dataset-stroke-data.csv")
-    load_and_preprocess(csv_path)
