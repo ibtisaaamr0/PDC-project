@@ -35,7 +35,7 @@ preprocessed_df = pd.concat([
 ], axis=0)
 preprocessed_file = os.path.join(results_dir, "preprocessed_data.csv")
 preprocessed_df.to_csv(preprocessed_file, index=False)
-print(f"\n✅ Preprocessed data saved to: {preprocessed_file}")
+print(f"\n[SUCCESS] Preprocessed data saved to: {preprocessed_file}")
 
 # GPU Model Training
 gpu_model = lgb.LGBMClassifier(device="gpu", gpu_platform_id=0, gpu_device_id=0, n_estimators=200, random_state=42)
@@ -73,11 +73,11 @@ results = {
 
 results_file = os.path.join(results_dir, "gpu_results.json")
 pd.DataFrame([results]).to_json(results_file, orient="records")
-print("\n✅ GPU Training Complete")
+print("\n[SUCCESS] GPU Training Complete")
 print(results)
 print(f"Results saved to: {results_file}")
 
 # Save Trained GPU Model
 model_file = os.path.join(results_dir, "gpu_model.pkl")
 joblib.dump(gpu_model, model_file)
-print(f"✅ GPU model saved to: {model_file}")
+print(f"[SUCCESS] GPU model saved to: {model_file}")

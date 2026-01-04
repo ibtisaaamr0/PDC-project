@@ -37,7 +37,7 @@ preprocessed_df = pd.concat([
 ], axis=0)
 preprocessed_file = os.path.join(results_dir, "preprocessed_data.csv")
 preprocessed_df.to_csv(preprocessed_file, index=False)
-print(f"\n✅ Preprocessed data saved to: {preprocessed_file}")
+print(f"\n[SUCCESS] Preprocessed data saved to: {preprocessed_file}")
 
 
 # CPU Model Training
@@ -70,7 +70,7 @@ results = {
 
 results_file = os.path.join(results_dir, "cpu_results.json")
 pd.DataFrame([results]).to_json(results_file, orient="records")
-print("\n✅ CPU Training Complete")
+print("\n[SUCCESS] CPU Training Complete")
 print(results)
 print(f"Results saved to: {results_file}")
 
@@ -79,4 +79,4 @@ print(f"Results saved to: {results_file}")
 
 model_file = os.path.join(results_dir, "cpu_model.pkl")
 joblib.dump(cpu_model, model_file)
-print(f"✅ CPU model saved to: {model_file}")
+print(f"[SUCCESS] CPU model saved to: {model_file}")

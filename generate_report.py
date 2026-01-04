@@ -103,4 +103,4 @@ pdf.multi_cell(0, 5,
 )
 
 pdf.output(pdf_file)
-print(f"\n✅ PDF report generated: {pdf_file}")
+print(f"\n[SUCCESS] PDF report generated: {pdf_file}")
