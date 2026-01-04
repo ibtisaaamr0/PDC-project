@@ -1,1 +1,1 @@
-[{"Model":"LightGBM","Device":"CPU","Training Time (s)":1.3203320503,"Accuracy (%)":94.4227005871,"CPU":"AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD"}]
+[{"Model":"LightGBM","Device":"CPU","Training Time (s)":1.3002276421,"Accuracy (%)":94.4227005871,"F1 Score":0.1230769231,"CPU":"AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD"}]
