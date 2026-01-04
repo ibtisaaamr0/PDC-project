@@ -38,6 +38,6 @@ results = {
     "CPU": platform.processor()
 }
 
-pd.DataFrame([results]).to_json(os.path.join(results_dir, "cpu_results.json"), orient="records")
+pd.DataFrame([results]).to_json(os.path.join(results_dir, "cpu_results2.json"), orient="records")
 print("\nCPU Training Complete")
 print(results)

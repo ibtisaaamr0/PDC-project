@@ -49,6 +49,6 @@ results = {
     "GPU": gpu_name
 }
 
-pd.DataFrame([results]).to_json(os.path.join(results_dir, "gpu_results.json"), orient="records")
+pd.DataFrame([results]).to_json(os.path.join(results_dir, "gpu_results2.json"), orient="records")
 print("\nGPU Training Complete")
 print(results)

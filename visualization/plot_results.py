@@ -8,8 +8,8 @@ results_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'res
 plots_dir = results_dir  
 
 # Load results
-cpu_res = pd.read_json(os.path.join(results_dir, "cpu_results.json"))
-gpu_res = pd.read_json(os.path.join(results_dir, "gpu_results.json"))
+cpu_res = pd.read_json(os.path.join(results_dir, "cpu_results2.json"))
+gpu_res = pd.read_json(os.path.join(results_dir, "gpu_results2.json"))
 
 # Combine
 results = pd.concat([cpu_res, gpu_res], ignore_index=True)
@@ -20,7 +20,7 @@ plt.bar(results["Device"], results["Training Time (s)"], color=["skyblue", "ligh
 plt.title("CPU vs GPU Training Time")
 plt.ylabel("Time (seconds)")
 plt.xlabel("Device")
-plt.savefig(os.path.join(plots_dir, "training_time_comparison.png"))
+plt.savefig(os.path.join(plots_dir, "training_time_comparison2.png"))
 plt.close()
 
 # Accuracy Comparison
@@ -29,7 +29,7 @@ plt.bar(results["Device"], results["Accuracy (%)"], color=["skyblue", "lightgree
 plt.title("CPU vs GPU Accuracy")
 plt.ylabel("Accuracy (%)")
 plt.xlabel("Device")
-plt.savefig(os.path.join(plots_dir, "accuracy_comparison.png"))
+plt.savefig(os.path.join(plots_dir, "accuracy_comparison2.png"))
 plt.close()
 
 # Speedup Ratio
@@ -41,7 +41,7 @@ plt.figure(figsize=(6,4))
 plt.bar(["CPU/GPU"], [speedup], color="orange")
 plt.title("CPU/GPU Speedup Ratio")
 plt.ylabel("Speedup (x)")
-plt.savefig(os.path.join(plots_dir, "speedup_ratio.png"))
+plt.savefig(os.path.join(plots_dir, "speedup_ratio2.png"))
 plt.close()
 
 print("\nAll plots saved in results folder.")
