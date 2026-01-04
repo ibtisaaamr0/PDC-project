@@ -1,13 +1,11 @@
-# ==============================
-# Visualization Script
-# ==============================
+
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
 # Paths
 results_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results'))
-plots_dir = results_dir  # save plots in results folder
+plots_dir = results_dir  
 
 # Load results
 cpu_res = pd.read_json(os.path.join(results_dir, "cpu_results.json"))

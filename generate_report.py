@@ -1,6 +1,4 @@
-# ==============================
-# Generate PDF Report for CPU vs GPU ML
-# ==============================
+
 
 import pandas as pd
 from fpdf import FPDF
